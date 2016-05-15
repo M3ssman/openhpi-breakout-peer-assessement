@@ -5,22 +5,22 @@ import de.hpi.javaide.breakout.starter.Game;
 
 public class BallDepotBuilder implements Builder<BallDepot> {
 
-	Game game;
-	
-	public BallDepotBuilder(Game game) {
-		this.game = game;
-	}
-	
-	@Override
-	public BallDepot build() {
+    Game game;
 
-		BallDepotData data = new BallDepotData();		
-		BallDepotLogic logic = new BallDepotLogic(data);
-		logic.initBallDepotData();
-		
-		BallDepotDisplay display = new BallDepotDisplay(data);
-		BallDepot ballDepot = new BallDepot(logic, display, game); 
-		return ballDepot;
-	}
+    public BallDepotBuilder(Game game) {
+        this.game = game;
+    }
+
+    @Override
+    public BallDepot build() {
+
+        BallDepotData data = new BallDepotData();
+        BallDepotLogic logic = new BallDepotLogic(data);
+        logic.initBallDepotData();
+
+        BallDepotDisplay display = new BallDepotDisplay(data);
+        BallDepot ballDepot = new BallDepot(logic, display, game);
+        return ballDepot;
+    }
 
 }

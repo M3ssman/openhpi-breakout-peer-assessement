@@ -4,60 +4,62 @@ import processing.core.PVector;
 
 /**
  * Adapter to Processing's PVector
- * @author Ralf Teusner and Tom Staubitz
  *
+ * @author Ralf Teusner and Tom Staubitz
  */
 public class Vector {
 
-	/**
-	 * The PVector object to be wrapped
-	 */
-	private PVector vector;
+    /**
+     * The PVector object to be wrapped
+     */
+    private PVector vector;
 
-	/**
-	 * Constructor to set the x and the y value of the Vector
-	 * @param x float
-	 * @param y float
-	 */
-	public Vector(float x, float y) {
-		vector = new PVector(x, y);
-	}
+    /**
+     * Constructor to set the x and the y value of the Vector
+     *
+     * @param x float
+     * @param y float
+     */
+    public Vector(float x, float y) {
+        vector = new PVector(x, y);
+    }
 
-	public float getX() {
-		return vector.x;
-	}
+    public float getX() {
+        return vector.x;
+    }
 
-	public float getY() {
-		return vector.y;
-	}
+    public float getY() {
+        return vector.y;
+    }
 
-	public void setX(float x) {
-		vector.x = x;
-	}
+    public void setX(float x) {
+        vector.x = x;
+    }
 
-	public void setY(float y) {
-		vector.y = y;
-	}
+    public void setY(float y) {
+        vector.y = y;
+    }
 
-	/**
-	 * Multiply the given Vector with the given number
-	 * @param n
-	 */
-	public void mult(float n) {
-		vector.mult(n);
-	}
+    /**
+     * Multiply the given Vector with the given number
+     *
+     * @param n
+     */
+    public void mult(float n) {
+        vector.mult(n);
+    }
 
-	/**
-	 * Normalize the wrapped vector
-	 */
-	public void normalize() {
-		vector.normalize();
-	}
-	
-	public double getLength() {
-		float x = vector.x;
-		float y = vector.y;
-		return Math.sqrt(x * x + y * y);
-	}
+    /**
+     * Normalize the wrapped vector
+     */
+    public void normalize() {
+        vector.normalize();
+    }
+
+    public double getLength() {
+        float x = vector.x;
+        float y = vector.y;
+        return Math.sqrt(x * x + y * y);
+    }
 
 }

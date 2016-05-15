@@ -7,11 +7,13 @@ import java.awt.geom.Rectangle2D;
 import de.hpi.javaide.breakout.starter.Game;
 
 class PaddleLogic {
-	
-	private PaddleData data;
-	
-	PaddleLogic(PaddleData data) {
-		this.data = data;
-	}
-	//TODO hier fehlt noch was
+
+    private PaddleData data;
+
+    PaddleLogic(PaddleData data) {
+        this.data = data;
+    }
+    //TODO hier fehlt noch was
+
+
 }

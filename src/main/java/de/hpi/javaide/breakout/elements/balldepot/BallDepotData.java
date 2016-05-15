@@ -9,67 +9,67 @@ import de.hpi.javaide.breakout.elements.ball.Ball;
 
 /**
  * @author Ralf Teusner and Tom Staubitz
- *
  */
 class BallDepotData {
-	
-	/**
-	 * x and y position of the depot
-	 */
-	private Dimension dimension;
-	private Point position;
-	/**
-	 * Datastructure to store the Balls
-	 */
-	private ArrayList<Ball> balls;
-	
-	/**
-	 * distance between the balls in the depot
-	 */
-	private int offset = 50;
 
-	/**
-	 * Create the Depot at bottom right of the screen
-	 * and add the amount of Balls that has been set in the game settings.
-	 * @param game Game reference to access the Processing features
-	 */
-	BallDepotData() {
-		balls = new ArrayList<>();
-	}
+    /**
+     * x and y position of the depot
+     */
+    private Dimension dimension;
+    private Point position;
+    /**
+     * Datastructure to store the Balls
+     */
+    private ArrayList<Ball> balls;
 
-	int getX() {
-		return position.x;
-	}
+    /**
+     * distance between the balls in the depot
+     */
+    private int offset = 50;
 
-	int getY() {
-		return position.y;
-	}
+    /**
+     * Create the Depot at bottom right of the screen
+     * and add the amount of Balls that has been set in the game settings.
+     *
+     * @param game Game reference to access the Processing features
+     */
+    BallDepotData() {
+        balls = new ArrayList<>();
+    }
 
-	int getWidth() {
-		return dimension.width;
-	}
+    int getX() {
+        return position.x;
+    }
 
-	int getHeight() {
-		return dimension.height;
-	}
+    int getY() {
+        return position.y;
+    }
 
-	int getOffset() {
-		return offset;
-	}
-	
-	Shape getGeometry() {
-		return null;
-	}
+    int getWidth() {
+        return dimension.width;
+    }
 
-	void setPosition(Point position) {
-		this.position = position;
-	}
+    int getHeight() {
+        return dimension.height;
+    }
 
-	void setDimension(Dimension dimension) {
-		this.dimension = dimension;
-	}
+    int getOffset() {
+        return offset;
+    }
 
-	ArrayList<Ball> getBalls() {
-		return balls;
-	}
+    Shape getGeometry() {
+        return null;
+    }
+
+    void setPosition(Point position) {
+        this.position = position;
+    }
+
+    void setDimension(Dimension dimension) {
+        this.dimension = dimension;
+    }
+
+    ArrayList<Ball> getBalls() {
+        return balls;
+    }
 }
