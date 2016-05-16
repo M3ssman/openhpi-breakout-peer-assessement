@@ -10,76 +10,73 @@ import de.hpi.javaide.breakout.interfaces.Moveable;
 
 public class Paddle implements Collideable, Displayable, Moveable, Geometric {
 
-    //TODO implement the paddle's methods
-    //Hint: Many of them are just delegating to the logic or the display
+    PaddleLogic paddleLogic;
+    PaddleDisplay paddleDisplay;
 
-    public static final int WIDTH = 0;
-    public static final int HEIGHT = 0;
+    public static final int WIDTH = 40;
+    public static final int HEIGHT = 10;
 
     public Paddle(PaddleLogic paddleLogic, PaddleDisplay paddleDisplay) {
-
+        this.paddleLogic = paddleLogic;
+        this.paddleDisplay = paddleDisplay;
     }
 
     //collideal
     @Override
     public int getLeftBoundary() {
-        // TODO Auto-generated method stub
-        return 0;
+        return paddleLogic.getLeftBoundary();
     }
 
     @Override
     public int getRightBoundary() {
-        // TODO Auto-generated method stub
-        return 0;
+        return paddleLogic.getRightBoundary();
     }
 
     @Override
     public int getUpperBoundary() {
-        // TODO Auto-generated method stub
-        return 0;
+        return paddleLogic.getUpperBoundary();
     }
 
     @Override
     public int getLowerBoundary() {
-        // TODO Auto-generated method stub
-        return 0;
+        return paddleLogic.getLowerBoundary();
     }
 
     @Override
     public Point getCenter() {
-        // TODO Auto-generated method stub
-        return null;
+        return paddleLogic.getCenter();
     }
 
     //Geometric
     @Override
     public Shape getGeometry() {
-        // TODO Auto-generated method stub
-        return null;
+        return paddleLogic.getGeometry();
     }
 
     @Override
     public boolean intersects(Shape shape) {
-        // TODO Auto-generated method stub
-        return false;
+        return paddleLogic.intersects(shape);
     }
 
     //Moveable
     @Override
     public double getSpeed() {
-        // TODO Auto-generated method stub
-        return 0;
+        return paddleLogic.getSpeed();
     }
 
     @Override
-    public void move(int x, int y) {
-        // TODO Auto-generated method stub
-
+    public void move(int xNew, int xOld) {
+        paddleLogic.move(xNew, xOld);
     }
 
     //Displayable
     @Override
     public void display() {
-        // TODO Auto-generated method stub
+        paddleDisplay.display();
+    }
+
+    @Override
+    public String toString() {
+        return paddleLogic.toString();
     }
 }

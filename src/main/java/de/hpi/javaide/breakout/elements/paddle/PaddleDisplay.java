@@ -15,7 +15,7 @@ class PaddleDisplay {
      * Pass a reference to access the Processing features.
      *
      * @param game
-     * @param position
+     * @param data
      */
     PaddleDisplay(Game game, PaddleData data) {
         this.game = game;
