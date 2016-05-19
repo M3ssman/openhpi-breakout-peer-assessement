@@ -58,7 +58,8 @@ public class CollisionLogic {
      * Internal helper methods to provide speaking names for the actual decision making.
      */
     protected static boolean collidesWithSideBoundary(Game game, Ball currentBall) {
-        return 0 > currentBall.getLeftBoundary() || game.width < currentBall.getLeftBoundary();
+//        return 0 > currentBall.getLeftBoundary() || game.width < currentBall.getLeftBoundary();
+        return 0 > currentBall.getLeftBoundary() || game.width < currentBall.getRightBoundary();
     }
 
     protected static boolean collidesWithTopBoundary(Game game, Ball ball) {
