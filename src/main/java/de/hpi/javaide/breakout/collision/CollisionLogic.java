@@ -1,6 +1,7 @@
 package de.hpi.javaide.breakout.collision;
 
 import de.hpi.javaide.breakout.elements.ball.Ball;
+import de.hpi.javaide.breakout.elements.balldepot.BallDepot;
 import de.hpi.javaide.breakout.elements.brick.Brick;
 import de.hpi.javaide.breakout.elements.paddle.Paddle;
 import de.hpi.javaide.breakout.elements.wall.Wall;
@@ -54,11 +55,11 @@ public class CollisionLogic {
         }
     }
 
+
     /**
      * Internal helper methods to provide speaking names for the actual decision making.
      */
     protected static boolean collidesWithSideBoundary(Game game, Ball currentBall) {
-//        return 0 > currentBall.getLeftBoundary() || game.width < currentBall.getLeftBoundary();
         return 0 > currentBall.getLeftBoundary() || game.width < currentBall.getRightBoundary();
     }
 
@@ -72,5 +73,15 @@ public class CollisionLogic {
 
     protected static boolean collidesWithBrick(Ball ball, Geometric brick) {
         return ball.intersects(brick.getGeometry());
+    }
+
+    public static void checkBallGone(Game game, Ball currentBall, BallDepot ballDepot) {
+        if (passesLowerBoundary(game, currentBall)) {
+            ballDepot.dispense();
+        }
+    }
+
+    protected static boolean passesLowerBoundary(Game game, Ball currentBall) {
+        return game.height < currentBall.getCenter().getY();
     }
 }

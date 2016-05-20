@@ -81,4 +81,9 @@ public class Brick implements Collideable, Displayable, Geometric {
         return logic.getCenter();
     }
 
+    @Override
+    public String toString() {
+        return "Brick @ "+logic.getCenter();
+    }
+
 }

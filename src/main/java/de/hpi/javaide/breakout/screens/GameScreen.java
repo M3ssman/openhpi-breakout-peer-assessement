@@ -145,4 +145,13 @@ public class GameScreen implements Screen {
         // (Hint: the update() Method expects an input argument of type String)
 //		score.update(amount + "");
     }
+
+    /**
+     * As we are in the actual game now, we need all the elements that are part of the game.
+     * Such as the BallDepotTest (containing the Balls), the currentBall (the BallDepotTest dispenses the one BallTest after the other to this variable),
+     * the PaddleTest, and the WallTest (containing all the Bricks)
+     */
+    public BallDepot getBallDepot() {
+        return ballDepot;
+    }
 }
